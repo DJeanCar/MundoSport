@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="robots" content="NOODP">
+	<title>Mundo Sport</title>
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/normalize.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
+	<style>
+		.slogan {
+			text-align: center;
+			padding: 1em 0;
+			background: url('http://localhost:3000/img/banner.png') no-repeat center; 
+			background-size: cover;
+		}
+
+		/* Style the links inside the navigation bar */
+		.topnav a {
+		    float: left;
+		    display: block;
+		    color: #f2f2f2;
+		    text-align: center;
+		    padding: .3em 1em;
+		    text-decoration: none;
+		    font-size: 14px;
+		}
+
+		/* Hide the link that should open and close the topnav on small screens */
+		.topnav .icon {
+		    display: none;
+		}
+
+		@media screen and (max-width: 800px) {
+		  .topnav a {display: none;}
+		  .topnav a.icon {
+		    float: right;
+		    display: block;
+		  }
+		}
+
+		@media screen and (max-width: 800px) {
+		  .topnav.responsive {
+		  	position: absolute;
+			background-color: rgba(0, 0, 0, 0.80);
+			width: 100%;
+			top: 50px;
+			left: 0;
+			z-index: 1;
+		  }
+
+		  .topnav.responsive a {
+		    float: none;
+		    display: block;
+		    padding: .7em 0;
+		  }
+		}
+	</style>
+</head>
+<body>
+	<section class="slogan">
+		<header>
+			<div class="container">
+				<div class="row between">
+					<div class="menu__main">
+						<span class="menu__logo"><a href="/">Mundo Sport</a></span>
+					</div>
+
+					<div class="topnav" id="myTopnav">
+						<a href="#">Zapatos</a>
+						<a href="#">Ropa</a>
+						<a href="#">Accesorios</a>
+						<a href="javascript:void(0);" class="icon" id="icon" onclick="myFunction()">&#9776;</a>
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<div class="container">
+			<div class="row">
+				<div class="home__header">
+					<h1 class="slogan__description">Encuentra las mejores prendas deportivas en un solo lugar: Zapatos, ropa, accesorios y más</h1>
+					<a class="category__main__button" href="#random_image">Ver productos</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+	<section class="main_content">
+		<div class="container">
+			<div class="row">
+				<h2 class="content__subtitle">Productos</h2>
+			</div>
+			<div class="row around category__list">
+				<div class="category_item">
+					<div class="category_item__image">
+						<img src="img/zapato.png" alt="">
+					</div>
+					<div class="category_item__data">
+						<p class="title">Zapatillas</p>
+						<p class="description">La nueva gama de zapatos deportivos en todas los modelos y colores.</p>
+					</div>
+				</div>
+				<div class="category_item">
+					<div class="category_item__image">
+						<img src="img/ropa.png" alt="">
+					</div>
+					<div class="category_item__data">
+						<p class="title">Ropa deportiva</p>
+						<p class="description">Todo lo relacionado con el mundo deportivo, solo en mundo sport.</p>
+					</div>
+				</div>
+				<div class="category_item">
+					<div class="category_item__image">
+						<img src="img/accesorios.png" alt="">
+					</div>
+					<div class="category_item__data">
+						<p class="title">Artículos deportivos</p>
+						<p class="description">Las últimas novedades del mercado deportivo las encuentras aquí.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+	<footer class="footer">
+		<div class="container">
+			<div class="row between footer__list">
+				<div class="footer_item">
+					<p class="title">Mundo Sport</p>
+					<p class="description">Un mundo de zapatos deportivos</p>
+				</div>
+				<div class="footer_item">
+					<p class="title">Contacto</p>
+					<p class="description">Email: mundosportec@gmail.com</p>
+					<p class="description">Celular: 0999497165</p>
+					<p class="description">Oficina: 0969625331</p>
+					<p class="description">Babahoyo - Los ríos Ecuador</p>
+				</div>
+				<div class="footer_item">
+					<p class="title">Social</p>
+					<div class="row around network_list">
+						<div class="network_list__item">
+							<a target="_blank" href="https://www.facebook.com/pg/frasesamorparadedicar/"><img class="network_image facebook" src="img/facebook-icon-white.png" alt="facebook"></a>
+						</div>
+						<div class="network_list__item">
+							<a target="_blank" href="https://twitter.com/frasesDamorr2"><img class="network_image twitter" src="img/twitter-icon-white.png" alt="twitter"></a>
+						</div>
+						<div class="network_list__item">
+							<a target="_blank" href="https://plus.google.com/u/0/104762153762212542255"><img class="network_image google" src="img/google-icon-white.png" alt="google"></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<script>
+		function myFunction() {
+		    var x = document.getElementById("myTopnav");
+		    if (x.className === "topnav") {
+		        x.className += " responsive";
+		    	document.getElementById('icon').innerHTML = "&times;";
+		    } else {
+		        x.className = "topnav";
+		    	document.getElementById('icon').innerHTML = "&#9776;";
+		    }
+		}
+	</script>
+</body>
+</html>

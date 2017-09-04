@@ -1,0 +1,57 @@
+body {
+	background: linear-gradient(-90deg, #5BCEBB, #328A91);
+	font-family: 'Roboto', sans-serif;
+}
+
+.block {
+	display: block;
+}
+
+.login {
+	max-width: 320px;
+	margin: 9em auto;
+	overflow: hidden;
+}
+.login__title {
+	color: #fff;
+	font-weight: bold;
+	font-size: 2em;
+	padding-bottom: 1em;
+	border-bottom: 1px solid rgba(0,0,0,0.1);
+	text-align: center;
+}
+
+.login .input {
+	width: 100%;
+	background-color: #328A91;
+	border: none;
+	margin-bottom: 1.5em;
+	padding: 1em;
+	color: #fff;
+	font-weight: 100;
+}
+
+.login .input::placeholder {
+	color: rgba(255, 255, 255, 0.4);
+}
+
+.secondary_text {
+	color: #fff;
+	font-weight: 100;
+	margin-bottom: 1.5em;
+}
+
+.login .button {
+	width: 100%;
+	padding: 1em;
+	border: none;
+	background-color: #fff;
+	color: #1B2432;
+	margin-bottom: 1em;
+}
+
+.login .bottom {
+	display: block;
+	text-align: center;
+	color: rgba(241, 241, 241, .4);
+}
