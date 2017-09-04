@@ -1,4 +1,6 @@
 var path = require('path');
+const webpack = require('webpack');
+const debug = process.env.NODE_ENV !== "prod";
 
 module.exports = {
 	devtool: 'source-map',
@@ -15,7 +17,7 @@ module.exports = {
 				exclude: /(node_modules|bower_components)/,
 				loader: 'babel-loader',
 				options: {
-					presets: ['react'],
+					presets: ['react', 'es2015'],
 					plugins: [
 						'babel-plugin-react-html-attrs',
 						'transform-object-rest-spread',
@@ -25,4 +27,14 @@ module.exports = {
 			}
 		]
 	},
+	plugins: debug ? [] : [
+    new webpack.DefinePlugin({
+      'process.env': {
+        'NODE_ENV': JSON.stringify('prod')
+      }
+    }),
+    new webpack.optimize.DedupePlugin(),
+    new webpack.optimize.UglifyJsPlugin(),
+    new webpack.optimize.AggressiveMergingPlugin(),
+  ],
 };
