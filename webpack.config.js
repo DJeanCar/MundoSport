@@ -5,7 +5,7 @@ const debug = process.env.NODE_ENV !== "prod";
 module.exports = {
 	devtool: 'source-map',
 	context: path.resolve(__dirname, 'client', 'js'),
-	entry: './admin/index.js',
+	entry: ['babel-polyfill', './admin/index.js'],
 	output: {
 		path: path.resolve(__dirname, 'client', 'js', 'dist'),
 		filename: 'admin.bundle.js',

@@ -1,3 +1,4 @@
+import 'babel-polyfill';
 import express from 'express';
 import session from './config/session';
 import template from './config/template';
