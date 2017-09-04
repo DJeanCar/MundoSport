@@ -38,3 +38,4 @@ module.exports = {
     new webpack.optimize.AggressiveMergingPlugin(),
   ],
 };
+
