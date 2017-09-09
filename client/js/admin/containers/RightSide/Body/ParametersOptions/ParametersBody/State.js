@@ -2,7 +2,8 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import {
-  getAllCountries
+  getAllCountries,
+  deleteState,
 } from '../../../../../actions';
 import autobind from 'autobind-decorator';
 
@@ -12,6 +13,7 @@ import autobind from 'autobind-decorator';
   }),
   dispatch => bindActionCreators({
   	getAllCountries,
+  	deleteState,
   }, dispatch)
 )
 
@@ -20,6 +22,13 @@ export default class Country extends Component {
 
 	componentWillMount() {
 		this.props.getAllCountries();
+	}
+
+	@autobind
+	handleDeleteState(stateId) {
+		if (confirm("¿Estas seguro que quieres borrar este estado?")) {
+			this.props.deleteState(stateId);
+		}
 	}
 
 	render() {
@@ -36,7 +45,7 @@ export default class Country extends Component {
 									<div class="field__row" key={state._id}>
 										<div>{state.name}</div>
 										<div>{state.capital}</div>
-										<div><a href="" class="btn delete">Eliminar</a></div>
+										<div><a onClick={() => this.handleDeleteState(state._id)} class="btn delete">Eliminar</a></div>
 									</div>
 								)}
 							</div>

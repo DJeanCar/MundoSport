@@ -36,7 +36,7 @@ export default class BranchOffices extends Component {
 									<div class="field__row" key={branchOffice._id}>
 										<div>{branchOffice.name}</div>
 										<div>{branchOffice.address}</div>
-										<div>{branchOffice.state.name}</div>
+										<div>{branchOffice.state && branchOffice.state.name}</div>
 										<div>{branchOffice.city.name}</div>
 										<div><a class="btn delete">Eliminar</a></div>
 									</div>

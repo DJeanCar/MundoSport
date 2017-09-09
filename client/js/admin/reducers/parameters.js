@@ -24,24 +24,35 @@ import {
   CREATE_BRANCH_OFFICES_FULFILLED,
   CREATE_BRANCH_OFFICES_REJECTED,
 
-} from '../actions';
+  DELETE_STATE_PENDING,
+  DELETE_STATE_FULFILLED,
+  DELETE_STATE_REJECTED,
+
+} from '../actions/parameters';
 
 const initialState = {
   
   countryList: [],
 
-  /*
-  countryList: [{
-    name:
-    states: [
-    ]
-  }]
-  */
-
 };
 
 const parameters = (state = initialState, action) => {
   switch (action.type) {
+
+    case DELETE_STATE_FULFILLED: {
+      const { stateId, countryId } = action.payload.body;
+      const newCountryList = state.countryList.map(country => {
+        if (country._id === countryId) {
+          country.states = country.states.filter(state => state._id !== stateId);
+        }
+        return country;
+      });
+      return {
+        ...state,
+        countryList: newCountryList,
+      };
+      break;
+    }
 
     case CREATE_BRANCH_OFFICES_FULFILLED: {
       const { branchOffice } = action.payload.body;

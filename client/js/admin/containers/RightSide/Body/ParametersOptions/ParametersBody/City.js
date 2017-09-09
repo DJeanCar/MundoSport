@@ -24,6 +24,7 @@ export default class City extends Component {
 
 	render() {
 		const { countryList } = this.props;
+		console.log(countryList);
 		return (
 			<div class="body__left">
 				{countryList.map(country => 
@@ -36,7 +37,7 @@ export default class City extends Component {
 									<div class="field__row" key={city._id}>
 										<div>{city.name}</div>
 										<div>{city.zipCode}</div>
-										<div>{city.state.name}</div>
+										<div>{city.state && city.state.name}</div>
 										<div><a class="btn delete">Eliminar</a></div>
 									</div>
 								)}
